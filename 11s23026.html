@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Sederhana - Teknologi dan Kehidupan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav {
+            background: #2c3e50;
+            padding: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #34495e;
+        }
+
+        /* Content */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .main-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .sidebar {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+
+        .article {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .article:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .article h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .article img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .article p {
+            margin-bottom: 1rem;
+            text-align: justify;
+            color: #555;
+        }
+
+        .meta {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Form Styling */
+        .form-container {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .form-container h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .result {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #e8f5e8;
+            border: 1px solid #4caf50;
+            border-radius: 4px;
+            display: none;
+        }
+
+        /* Sidebar Styling */
+        .widget {
+            margin-bottom: 2rem;
+        }
+
+        .widget h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .widget ul {
+            list-style: none;
+        }
+
+        .widget li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .widget a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .widget a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .main-content,
+            .sidebar {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>TechLife Blog</h1>
+        <p>Teknologi, Kehidupan, dan Inspirasi</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#teknologi">Teknologi</a></li>
+            <li><a href="#lifestyle">Gaya Hidup</a></li>
+            <li><a href="#tutorial">Tutorial</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- Content -->
+    <div class="container">
+        <main class="main-content">
+            <!-- Article 1 -->
+            <article class="article">
+                <h2>Perkembangan Kecerdasan Buatan di 2024</h2>
+                <div class="meta">
+                    <span>📅 22 September 2024</span> |
+                    <span>👤 Admin Blog</span> |
+                    <span>🏷️ Teknologi</span>
+                </div>
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop" alt="Kecerdasan Buatan">
+                <p>Tahun 2024 menjadi tahun yang revolusioner dalam dunia kecerdasan buatan. Berbagai terobosan baru telah mengubah cara kita berinteraksi dengan teknologi dalam kehidupan sehari-hari.</p>
+                <p>Dari asisten virtual yang semakin pintar hingga sistem otomatisasi yang lebih efisien, AI telah membuka berbagai kemungkinan baru yang sebelumnya hanya ada dalam angan-angan. Mari kita jelajahi perkembangan menarik ini lebih dalam.</p>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="article">
+                <h2>Tips Produktivitas untuk Pekerja Remote</h2>
+                <div class="meta">
+                    <span>📅 20 September 2024</span> |
+                    <span>👤 Admin Blog</span> |
+                    <span>🏷️ Gaya Hidup</span>
+                </div>
+                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=400&fit=crop" alt="Remote Work">
+                <p>Bekerja dari rumah membutuhkan disiplin dan strategi yang tepat. Banyak orang mengalami tantangan dalam mempertahankan produktivitas ketika bekerja secara remote.</p>
+                <p>Artikel ini akan membahas berbagai tips praktis yang bisa diterapkan untuk meningkatkan efektivitas kerja dari rumah, mulai dari pengaturan workspace hingga manajemen waktu yang optimal.</p>
+            </article>
+
+            <!-- Form Section -->
+            <div class="form-container">
+                <h3>📝 Formulir Feedback Blog</h3>
+                <form id="feedbackForm">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap:</label>
+                        <input type="text" id="nama" name="nama" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="kategori">Kategori Feedback:</label>
+                        <select id="kategori" name="kategori" required>
+                            <option value="">Pilih kategori...</option>
+                            <option value="konten">Kualitas Konten</option>
+                            <option value="desain">Desain Website</option>
+                            <option value="navigasi">Kemudahan Navigasi</option>
+                            <option value="lainnya">Lainnya</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rating">Rating (1-5):</label>
+                        <input type="range" id="rating" name="rating" min="1" max="5" value="5">
+                        <span id="ratingValue">5</span> ⭐
+                    </div>
+
+                    <div class="form-group">
+                        <label for="komentar">Komentar/Saran:</label>
+                        <textarea id="komentar" name="komentar" rows="5" placeholder="Berikan feedback Anda..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">Kirim Feedback</button>
+                </form>
+
+                <div id="result" class="result">
+                    <!-- Hasil akan ditampilkan di sini -->
+                </div>
+            </div>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="widget">
+                <h3>📚 Artikel Terbaru</h3>
+                <ul>
+                    <li><a href="#">Panduan Machine Learning untuk Pemula</a></li>
+                    <li><a href="#">10 Tools Productivity Terbaik 2024</a></li>
+                    <li><a href="#">Tren Desain Web Modern</a></li>
+                    <li><a href="#">Cara Optimasi SEO Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <h3>🏷️ Kategori</h3>
+                <ul>
+                    <li><a href="#">Teknologi (15)</a></li>
+                    <li><a href="#">Tutorial (12)</a></li>
+                    <li><a href="#">Gaya Hidup (8)</a></li>
+                    <li><a href="#">Review (6)</a></li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <h3>📊 Statistik Blog</h3>
+                <p><strong>Total Artikel:</strong> 41</p>
+                <p><strong>Pengunjung Bulan Ini:</strong> 2,847</p>
+                <p><strong>Komentar:</strong> 156</p>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 TechLife Blog. Dibuat dengan ❤️ di Indonesia.</p>
+        <p>Follow us: 
+            <a href="#" style="color: #667eea;">Facebook</a> | 
+            <a href="#" style="color: #667eea;">Twitter</a> | 
+            <a href="#" style="color: #667eea;">Instagram</a>
+        </p>
+    </footer>
+
+    <script>
+        // DOM Manipulation untuk Form
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('feedbackForm');
+            const result = document.getElementById('result');
+            const ratingSlider = document.getElementById('rating');
+            const ratingValue = document.getElementById('ratingValue');
+
+            // Update rating value display
+            ratingSlider.addEventListener('input', function() {
+                ratingValue.textContent = this.value;
+            });
+
+            // Form submission handler
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(form);
+                const data = {};
+                
+                for (let [key, value] of formData.entries()) {
+                    data[key] = value;
+                }
+
+                // Simulate form processing
+                displayResult(data);
+                
+                // Reset form
+                form.reset();
+                ratingValue.textContent = '5';
+            });
+
+            function displayResult(data) {
+                const resultHTML = `
+                    <h4>✅ Feedback Berhasil Dikirim!</h4>
+                    <p><strong>Nama:</strong> ${data.nama}</p>
+                    <p><strong>Email:</strong> ${data.email}</p>
+                    <p><strong>Kategori:</strong> ${data.kategori}</p>
+                    <p><strong>Rating:</strong> ${data.rating}/5 ⭐</p>
+                    <p><strong>Komentar:</strong> ${data.komentar || 'Tidak ada komentar'}</p>
+                    <p><em>Terima kasih atas feedback Anda! 🙏</em></p>
+                `;
+                
+                result.innerHTML = resultHTML;
+                result.style.display = 'block';
+                
+                // Auto hide after 5 seconds
+                setTimeout(() => {
+                    result.style.display = 'none';
+                }, 5000);
+
+                // Scroll to result
+                result.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            // Add some interactive elements
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const section = this.getAttribute('href').substring(1);
+                    console.log(`Navigating to: ${section}`);
+                    
+                    // Simple highlight effect
+                    navLinks.forEach(l => l.style.backgroundColor = '');
+                    this.style.backgroundColor = '#34495e';
+                    
+                    setTimeout(() => {
+                        this.style.backgroundColor = '';
+                    }, 2000);
+                });
+            });
+
+            // Add animation to articles on scroll
+            const articles = document.querySelectorAll('.article');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            articles.forEach(article => {
+                article.style.opacity = '0';
+                article.style.transform = 'translateY(20px)';
+                article.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(article);
+            });
+        });
+    </script>
+</body>
+</html>
