@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D. Yophanci P. Sihombing - Blog Pribadi</title>
+  <style>
+    * {margin:0;padding:0;box-sizing:border-box;}
+
+    body {
+      font-family: 'Verdana', sans-serif;
+      line-height: 1.7;
+      background: #f0f9f9;
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+      color: white;
+      text-align: center;
+      padding: 2.5rem 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    nav {
+      background: #004080;
+      text-align: center;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 1rem 1.5rem;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover {
+      background: #0066cc;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .article-card {
+      background: white;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .article-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .article-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .article-content {
+      padding: 1.5rem;
+    }
+
+    .article-content h2 {
+      color: #004080;
+      margin-bottom: 0.5rem;
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: #777;
+      margin-bottom: 1rem;
+    }
+
+    .article-content p {
+      text-align: justify;
+      color: #444;
+    }
+
+    /* About Section */
+    .about {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .about h3 {
+      color: #004080;
+      margin-bottom: 1rem;
+    }
+
+    .about p {
+      color: #555;
+    }
+
+    /* Footer */
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    footer a {
+      color: #00c6ff;
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width:600px) {
+      header h1 {font-size: 2rem;}
+      .article-card img {height: 180px;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Blog Pribadi</h1>
+    <p>D. Yophanci P. Sihombing | Catatan & Inspirasi</p>
+  </header>
+
+  <nav>
+    <a href="#home">Beranda</a>
+    <a href="#artikel">Artikel</a>
+    <a href="#about">Tentang Saya</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+
+  <main>
+    <!-- Artikel 1 -->
+    <div class="article-card">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1000&h=500&fit=crop" alt="Teknologi Masa Depan">
+      <div class="article-content">
+        <h2>Belajar Konsisten di Dunia Digital</h2>
+        <div class="meta">📅 22 September 2025 | ✍️ D. Yophanci</div>
+        <p>Konsistensi adalah kunci keberhasilan di era digital. Tidak cukup hanya tahu teknologi, tetapi bagaimana kita memanfaatkannya secara rutin untuk mencapai tujuan yang lebih besar. Dari menulis blog, belajar coding, hingga membangun personal branding, semua butuh komitmen.</p>
+      </div>
+    </div>
+
+    <!-- Artikel 2 -->
+    <div class="article-card">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1000&h=500&fit=crop" alt="Produktivitas">
+      <div class="article-content">
+        <h2>Mengelola Produktivitas dengan Bijak</h2>
+        <div class="meta">📅 18 September 2025 | ✍️ D. Yophanci</div>
+        <p>Produktivitas bukan berarti bekerja tanpa henti. Justru, produktivitas adalah kemampuan untuk mengatur energi dan fokus pada hal yang benar-benar penting. Mengatur jadwal istirahat, olahraga ringan, dan fokus pada satu tugas utama akan jauh lebih efektif.</p>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <h3>Tentang Penulis</h3>
+      <p>Halo! Saya <strong>D. Yophanci P. Sihombing</strong>, seorang pembelajar teknologi dan penikmat tulisan. Blog ini saya buat untuk berbagi ide, inspirasi, dan pengalaman dalam perjalanan saya di dunia digital.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Dibuat oleh <strong>D. Yophanci P. Sihombing</strong></p>
+    <p>Temukan saya di <a href="#">LinkedIn</a> | <a href="#">Instagram</a></p>
+  </footer>
+</body>
+</html>
