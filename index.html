@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Website-Ku</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f6f9;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #2a7fdb, #4abee2);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.4rem;
+    }
+
+    nav {
+      background: #222;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0.8rem;
+    }
+
+    nav li {
+      margin: 0 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #4abee2;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: #2a7fdb;
+      text-align: center;
+    }
+
+    .team {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .member {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .member:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    .member img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+
+    .member-info h3 {
+      margin: 0 0 5px;
+      color: #333;
+    }
+
+    .member-info p {
+      margin: 0;
+      color: #666;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Kelompok 8</h1>
+    <p>The Best Group</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#">Beranda</a></li>
+      <li><a href="#">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="card">
+      <h2>Tentang Kelompok</h2>
+      <p>Kami adalah kelompok dengan 6 anggota yang memiliki minat di dunia teknologi dan blog. 
+         Di sini kami berbagi pengalaman, ide, dan karya.</p>
+    </section>
+
+    <section class="card">
+      <h2>Visi & Misi</h2>
+      <p><strong>Visi:</strong> Menjadi kelompok yang solid dan kreatif dalam bidang teknologi.</p>
+      <p><strong>Misi:</strong> Berbagi pengetahuan, menciptakan karya bermanfaat, dan belajar bersama.</p>
+    </section>
+
+    <section>
+      <h2 style="text-align:center; color:#2a7fdb; margin-bottom:20px;">Tim Kami</h2>
+      <div class="team">
+        <div class="member">
+          <img src="Assets/Pic1.jpg" alt="Anggota 1">
+          <div class="member-info">
+            <h3>Anggota 1</h3>
+            <p>Spesialis Desain</p>
+          </div>
+        </div>
+        <div class="member">
+          <img src="Assets/Pic2.jpg" alt="Anggota 2">
+          <div class="member-info">
+            <h3>Anggota 2</h3>
+            <p>Frontend Developer</p>
+          </div>
+        </div>
+        <div class="member">
+          <img src="Assets/Pic3.jpg" alt="Anggota 3">
+          <div class="member-info">
+            <h3>Anggota 3</h3>
+            <p>Backend Developer</p>
+          </div>
+        </div>
+        <div class="member">
+          <img src="Assets/Pic4.jpg" alt="Anggota 4">
+          <div class="member-info">
+            <h3>Anggota 4</h3>
+            <p>Content Writer</p>
+          </div>
+        </div>
+        <div class="member">
+          <img src="Assets/Pic5.png" alt="Anggota 5">
+          <div class="member-info">
+            <h3>Anggota 5</h3>
+            <p>UI/UX Researcher</p>
+          </div>
+        </div>
+        <div class="member">
+          <img src="Assets/Pic6.jpg" alt="Anggota 6">
+          <div class="member-info">
+            <h3>Anggota 6</h3>
+            <p>Project Manager</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Website-Ku | Kelompok 8</p>
+  </footer>
+</body>
+</html>
