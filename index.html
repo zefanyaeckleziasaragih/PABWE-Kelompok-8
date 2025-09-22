@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Website-Ku</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f5f7fa;
+        animation: fadeIn 1s ease-in;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      header {
+        background: linear-gradient(135deg, #4abee2, #2a7fdb);
+        color: white;
+        text-align: center;
+        padding: 1rem 0;
+      }
+
+      nav {
+        background: #333;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      nav ul li {
+        margin: 0 15px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      nav ul li a:hover {
+        text-decoration: underline;
+      }
+
+      main {
+        padding: 20px;
+        max-width: 900px;
+        margin: auto;
+      }
+
+      .intro {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .vision {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+      }
+
+      .vision h2 {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .cta {
+        text-align: center;
+        margin: 30px 0;
+      }
+
+      .btn {
+        background: #4abee2;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .btn:hover {
+        background: #2a7fdb;
+      }
+
+      .team {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .member {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: 0.3s ease;
+      }
+
+      .member:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .member h3 {
+        margin: 10px 0 5px;
+      }
+
+      /* Styling untuk gambar anggota */
+      .member img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .member img:hover {
+        transform: scale(1.05);
+      }
+
+      footer {
+        text-align: center;
+        background: #333;
+        color: white;
+        padding: 15px;
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Kelompok 8</h1>
+      <p>The Best Group</p>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="intro">
+        <h2>Tentang Kelompok</h2>
+        <p>
+          Kami adalah kelompok dengan 6 anggota yang memiliki minat di dunia
+          teknologi dan blog. Di sini kami berbagi pengalaman, ide, dan karya.
+        </p>
+      </div>
+
+      <section class="vision">
+        <h2>Visi & Misi</h2>
+        <p>
+          Visi kami adalah menjadi kelompok yang solid dan kreatif dalam bidang
+          teknologi. Misi kami adalah berbagi pengetahuan, menciptakan karya
+          bermanfaat, dan belajar bersama.
+        </p>
+      </section>
+
+      <div class="team">
+        <div class="member">
+          <h3>Anggota 1</h3>
+          <img src="Assets/Pic1.jpg" alt="Foto Anggota 1" />
+          <p>Spesialis Desain</p>
+        </div>
+        <div class="member">
+          <h3>Anggota 2</h3>
+          <img src="Assets/Pic2.jpg" alt="Foto Anggota 2" />
+          <p>Frontend Developer</p>
+        </div>
+        <div class="member">
+          <h3>Anggota 3</h3>
+          <img src="Assets/Pic3.jpg" alt="Foto Anggota 3" />
+          <p>Backend Developer</p>
+        </div>
+        <div class="member">
+          <h3>Anggota 4</h3>
+          <img src="Assets/Pic4.jpg" alt="Foto Anggota 4" />
+          <p>Content Writer</p>
+        </div>
+        <div class="member">
+          <h3>Anggota 5</h3>
+          <img src="Assets/Pic5.png" alt="Foto Anggota 5" />
+          <p>UI/UX Researcher</p>
+        </div>
+        <div class="member">
+          <h3>Anggota 6</h3>
+          <img src="Assets/Pic6.jpg" alt="Foto Anggota 6" />
+          <p>Project Manager</p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Website-Ku</p>
+    </footer>
+  </body>
+</html>
