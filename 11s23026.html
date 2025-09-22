@@ -18,6 +18,136 @@
             background-color: #f4f4f4;
         }
 
+        /* Profile Section */
+        .profile-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 2rem 0;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .profile-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .admin-profile {
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .admin-profile:hover {
+            transform: translateY(-5px);
+        }
+
+        .admin-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #667eea;
+            margin: 0 auto 1rem;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .admin-avatar:hover {
+            transform: scale(1.05);
+        }
+
+        .admin-info h3 {
+            margin: 0 0 0.5rem 0;
+            color: #2c3e50;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .admin-title {
+            color: #667eea;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .admin-bio {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            max-width: 400px;
+        }
+
+        .admin-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .admin-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #f1f3f4;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: #667eea;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-link:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .profile-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        .stat-number {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #667eea;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.2rem;
+        }
+
         /* Header */
         header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -256,10 +386,83 @@
             .sidebar {
                 padding: 1rem;
             }
+
+            .profile-container {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+                padding: 0 1rem;
+            }
+
+            .admin-profile {
+                padding: 1.5rem;
+            }
+
+            .admin-avatar {
+                width: 100px;
+                height: 100px;
+            }
+
+            .admin-info h3 {
+                font-size: 1.5rem;
+            }
+
+            .profile-stats {
+                gap: 1rem;
+            }
+
+            .admin-social {
+                gap: 0.5rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Admin Profile Section -->
+    <section class="profile-section">
+        <div class="profile-container">
+            <div class="admin-profile">
+                <img src="Assets/Pic5.png" alt="Andre Christian Saragih - Admin Blog" class="admin-avatar">
+                
+                <div class="admin-info">
+                    <span class="admin-badge">👑 Admin Blog</span>
+                    <h3>Andre Saragih</h3>
+                    <p class="admin-title">Infromatics Student</p>
+                    <p class="admin-bio">
+                        Passionate about sharing knowledge in web development, AI, and modern technology. 
+                        Love to explore new frameworks and create meaningful content for fellow developers.
+                    </p>
+                </div>
+
+                <div class="admin-social">
+                    <a href="#" class="social-link" title="GitHub">📧</a>
+                    <a href="#" class="social-link" title="LinkedIn">💼</a>
+                    <a href="#" class="social-link" title="Twitter">🐦</a>
+                    <a href="#" class="social-link" title="Instagram">📷</a>
+                </div>
+
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">42</span>
+                        <span class="stat-label">Artikel Published</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2.8K</span>
+                        <span class="stat-label">Followers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">15.2K</span>
+                        <span class="stat-label">Total Views</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Header -->
     <header>
         <h1>TechLife Blog</h1>
